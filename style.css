@@ -1,0 +1,141 @@
+:root {
+  --bg: #e0e5ec;
+  --panel: #f9f9fb;
+  --text: #333;
+  --primary: #4e89ff;
+  --danger: #ff5c5c;
+  --accent: #4cd964;
+  --radius: 18px;
+  --shadow-light: -6px -6px 12px #ffffff,
+                   6px 6px 12px rgba(0,0,0,0.1);
+  --shadow-pressed: inset -4px -4px 8px #ffffff,
+                    inset 4px 4px 8px rgba(0,0,0,0.15);
+}
+
+:root.dark {
+  --bg: #1e1e2f;
+  --panel: #2a2a3c;
+  --text: #f5f5f7;
+  --primary: #76a9ff;
+  --danger: #ff6b6b;
+  --accent: #5de8a0;
+  --shadow-light: -6px -6px 12px rgba(255,255,255,0.05),
+                   6px 6px 12px rgba(0,0,0,0.4);
+  --shadow-pressed: inset -4px -4px 8px rgba(255,255,255,0.05),
+                    inset 4px 4px 8px rgba(0,0,0,0.6);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.calc {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  padding: 1.5rem;
+  width: 320px;
+  transition: all 0.3s ease;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.brand span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.toggle {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  border: none;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+.toggle:active {
+  box-shadow: var(--shadow-pressed);
+}
+
+.display {
+  background: var(--panel);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: right;
+  margin-bottom: 1.5rem;
+  min-height: 80px;
+  box-shadow: var(--shadow-light);
+}
+
+.history {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.btn {
+  background: var(--panel);
+  border: none;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  color: var(--primary);
+}
+
+.btn:active {
+  box-shadow: var(--shadow-pressed);
+}
+
+.operator {
+  color: var(--primary);
+}
+
+.equals {
+  background: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.clear {
+  background: var(--danger);
+  color: #fff;
+  font-weight: bold;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
